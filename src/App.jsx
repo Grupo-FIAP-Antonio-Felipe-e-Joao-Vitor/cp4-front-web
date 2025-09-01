@@ -24,6 +24,12 @@ function App() {
     }
   }
 
+  // Função para limpar a tela
+  function limparTela() {
+    setResultadoTela("0")
+    setEsperandoNumero(true)
+  }
+
   return (
     <section className="h-screen flex flex-col justify-center items-center">
       <section className="bg-blue-900 p-5 flex flex-col gap-2 rounded-2xl max-w-75">
@@ -40,7 +46,7 @@ function App() {
             <Botao label={"8"} funcao={() => mostrarNumeroNaTela("8")}/>
             <Botao label={"9"} funcao={() => mostrarNumeroNaTela("9")}/>
             <Botao label={"0"} funcao={() => mostrarNumeroNaTela("0")}/>
-            <Botao label={"AC"} />
+            <Botao label={"AC"} funcao={() => limparTela()}/>
             <Botao label={"="} />
           </section>
           <section className="grid grid-cols-1 grid-rows-4 gap-2">

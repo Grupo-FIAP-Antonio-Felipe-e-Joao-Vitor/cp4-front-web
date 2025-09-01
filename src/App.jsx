@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Botao from "./components/Botao"
 import Tela from "./components/Tela"
+import Titulo from "./components/Titulo"
 
 function App() {
   const [resultadoTela, setResultadoTela] = useState("0")
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <section className="h-screen flex flex-col justify-center items-center">
+      <Titulo />
       <section className="bg-blue-900 p-5 flex flex-col gap-2 rounded-2xl max-w-75">
         <Tela resultado={resultadoTela} />
         <section className="flex gap-2">

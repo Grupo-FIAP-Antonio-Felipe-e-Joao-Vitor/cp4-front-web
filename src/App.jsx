@@ -30,6 +30,17 @@ function App() {
     setEsperandoNumero(true)
   }
 
+  // Função para calcular o resultado
+  function calcularResultado() {
+    let resultadoEquacao = Number(eval(resultadoTela))
+    if (resultadoEquacao % 100 === 0) {
+      resultadoEquacao = Number(eval(resultadoTela)).toFixed(0)  // Sem casas decimais
+    } else {
+      resultadoEquacao = Number(eval(resultadoTela)).toFixed(2)  // Duas casas decimais
+    }
+    setResultadoTela(String(resultadoEquacao))
+  }
+
   return (
     <section className="h-screen flex flex-col justify-center items-center">
       <section className="bg-blue-900 p-5 flex flex-col gap-2 rounded-2xl max-w-75">
@@ -47,7 +58,7 @@ function App() {
             <Botao label={"9"} funcao={() => mostrarNumeroNaTela("9")}/>
             <Botao label={"0"} funcao={() => mostrarNumeroNaTela("0")}/>
             <Botao label={"AC"} funcao={() => limparTela()}/>
-            <Botao label={"="} />
+            <Botao label={"="} funcao={() => calcularResultado()}/>
           </section>
           <section className="grid grid-cols-1 grid-rows-4 gap-2">
             <Botao label={"+"} funcao={() => mostrarOperadorNaTela("+")}/>

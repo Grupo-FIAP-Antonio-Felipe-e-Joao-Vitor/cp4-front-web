@@ -2,7 +2,7 @@ import React from 'react'
 
 const Titulo = () => {
   return (
-    <h1>Calculadora</h1>
+    <h1 className='text-5xl mb-5 font-bold'>Calculadora</h1>
   )
 }
 

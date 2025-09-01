@@ -16,6 +16,14 @@ function App() {
     setEsperandoNumero(false)
   }
 
+  // Função para colocar o operador na tela
+  function mostrarOperadorNaTela(op) {
+    if (!esperandoNumero) {
+      setResultadoTela(resultadoTela + op)
+      setEsperandoNumero(true)
+    }
+  }
+
   return (
     <section className="h-screen flex flex-col justify-center items-center">
       <section className="bg-blue-900 p-5 flex flex-col gap-2 rounded-2xl max-w-75">
@@ -36,10 +44,10 @@ function App() {
             <Botao label={"="} />
           </section>
           <section className="grid grid-cols-1 grid-rows-4 gap-2">
-            <Botao label={"+"} />
-            <Botao label={"-"} />
-            <Botao label={"*"} />
-            <Botao label={"/"} />
+            <Botao label={"+"} funcao={() => mostrarOperadorNaTela("+")}/>
+            <Botao label={"-"} funcao={() => mostrarOperadorNaTela("-")}/>
+            <Botao label={"*"} funcao={() => mostrarOperadorNaTela("*")}/>
+            <Botao label={"/"} funcao={() => mostrarOperadorNaTela("/")}/>
           </section>
         </section>
       </section>

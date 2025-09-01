@@ -34,16 +34,15 @@ function App() {
   // Função para calcular o resultado
   function calcularResultado() {
     let resultadoEquacao = Number(eval(resultadoTela))
-    if (resultadoEquacao % 100 === 0) {
-      resultadoEquacao = Number(eval(resultadoTela)).toFixed(0)  // Sem casas decimais
+    if (Number.isInteger(resultadoEquacao)) {
+      setResultadoTela(String(resultadoEquacao.toFixed(0)))  // Sem casas decimais
     } else {
-      resultadoEquacao = Number(eval(resultadoTela)).toFixed(2)  // Duas casas decimais
+      setResultadoTela(String(resultadoEquacao.toFixed(2)))  // Duas casas decimais
     }
-    setResultadoTela(String(resultadoEquacao))
   }
 
   return (
-    <section className="h-screen flex flex-col justify-center items-center">
+    <section className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-teal-200 to-teal-500 ">
       <Titulo />
       <section className="bg-blue-900 p-5 flex flex-col gap-2 rounded-2xl max-w-75">
         <Tela resultado={resultadoTela} />
